@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import Layout from "../../components/Layout/Layout";
+import Layout from "./../../components/Layout/Layout";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
-// import { toast } from "react-toastify";
 import toast from "react-hot-toast";
 import "../../styles/AuthStyle.css";
 import { useAuth } from "../../context/auth";
-
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, setPasswprd] = useState("");
+  const [password, setPassword] = useState("");
   const [auth, setAuth] = useAuth();
+
   const navigate = useNavigate();
   const location = useLocation();
 
-  //   form function
+  // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -41,9 +40,10 @@ const Login = () => {
   };
   return (
     <Layout title="Register - Ecommer App">
-      <div className="form-container" style={{ minHeight: "90vh" }}>
+      <div className="form-container ">
         <form onSubmit={handleSubmit}>
           <h4 className="title">LOGIN FORM</h4>
+
           <div className="mb-3">
             <input
               type="email"
@@ -59,7 +59,7 @@ const Login = () => {
             <input
               type="password"
               value={password}
-              onChange={(e) => setPasswprd(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               className="form-control"
               id="exampleInputPassword1"
               placeholder="Enter Your Password"
@@ -77,6 +77,7 @@ const Login = () => {
               Forgot Password
             </button>
           </div>
+
           <button type="submit" className="btn btn-primary">
             LOGIN
           </button>
