@@ -11,7 +11,7 @@ const UserMenu = () => {
             to="/dashboard/user/profile"
             className="list-group-item list-group-item-action"
           >
-            Prifile
+            Profile
           </NavLink>
           <NavLink
             to="/dashboard/user/orders"
