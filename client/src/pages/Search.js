@@ -1,4 +1,5 @@
-import { Layout } from "antd";
+import Layout from "./../components/Layout/Layout.js";
+
 import React from "react";
 import { useSearch } from "../context/search";
 const Search = () => {
