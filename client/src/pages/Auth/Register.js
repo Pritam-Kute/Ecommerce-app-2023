@@ -14,6 +14,7 @@ const Register = () => {
   const [address, setAddress] = useState("");
   const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
+
   //   form function
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +28,7 @@ const Register = () => {
         answer,
       });
       if (res && res.data.success) {
-        toast.success(res.data.message);
+        toast.success(res.data && res.data.message);
         navigate("/login");
       } else {
         toast.error(res.data.message);
@@ -40,7 +41,7 @@ const Register = () => {
   //   console.log(process.env.REACT_API);
   return (
     <Layout title="Register - Ecommer App">
-      <div className="form-container" style={{ minHeight: "90vh" }}>
+      <div className="form-container">
         <form onSubmit={handleSubmit}>
           <h4 className="title">REGISTER FORM</h4>
           <div className="mb-3">
